@@ -14,7 +14,7 @@
     "relative": true,
     "path": "/rule_templates"
   },
-  "es_host": "elasticsearch",
+  "es_host": "10.42.3.92",
   "es_port": 9200,
   "es_username": "",
   "es_password": "",

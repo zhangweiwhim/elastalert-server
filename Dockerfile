@@ -39,17 +39,17 @@ COPY elastalert_modules/ /opt/elastalert/elastalert_modules
 COPY patches/loaders.py /opt/elastalert/elastalert/loaders.py
 # Fix until https://github.com/Yelp/elastalert/pull/2640 is merged
 COPY patches/zabbix.py /opt/elastalert/elastalert/zabbix.py
-# Fix until https://github.com/Yelp/elastalert/pull/2793 and https://github.com/Yelp/elastalert/pull/3024 is merged
+# Fix until https://github.com/Yelp/elastalert/pull/2793 is merged
 COPY patches/alerts.py /opt/elastalert/elastalert/alerts.py
 
 # Add default rules directory
 # Set permission as unpriviledged user (1000:1000), compatible with Kubernetes
 RUN mkdir -p /opt/elastalert/rules/ /opt/elastalert/server_data/tests/ \
-    && chown -R node:node /opt
+    && chown -R root:root /opt
 
-RUN pip3 install --no-cache-dir --upgrade pip
+RUN pip3 install --upgrade pip
 
-USER node
+USER root
 
 EXPOSE 3030
 
@@ -63,7 +63,7 @@ RUN sed -i 's/jira>=1.0.10,<1.0.15/jira>=2.0.0/g' requirements.txt && \
     sed -i 's/py-zabbix==1.1.3/py-zabbix>=1.1.3/g' requirements.txt && \
     sed -i 's/requests>=2.0.0/requests>=2.10.0/g' requirements.txt && \
     sed -i 's/twilio==6.0.0/twilio>=6.0.0,<6.1/g' requirements.txt && \
-    pip3 install --no-cache-dir -r requirements.txt --user
+    pip3 install -r requirements.txt --user
 
 WORKDIR /opt/elastalert-server
 
