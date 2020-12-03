@@ -1,3 +1,7 @@
+I was use elastalert:v.0.2.4 and elastalert-kibana-plugin:7.5.0
+
+Has areadly support the Wechat Work 
+
 ## step1.Clone the repository
 ```bash
 git clone https://github.com/zhangweiwhim/elastalert-server.git && cd elastalert-server
