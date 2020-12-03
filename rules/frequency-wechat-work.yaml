@@ -1,6 +1,6 @@
 
 # 报警规则名字，全局唯一
-name: Test frequency rule
+name: Test frequency rule send by wechat work
 
 # 定义报警的类型,这里我以frequency为例,当给定时间至少有一定数量的事件出现时触发报警.
 # 官方文档:https://elastalert.readthedocs.io/en/latest/ruletypes.html#rule-types
@@ -20,8 +20,9 @@ timeframe:
 # filer插件定义我们要过滤的条件具体可以参考官方文档
 # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl.html
 filter:
-- term:
-    message: "error"
+- query:
+    query_string:
+        query: "message: Exception OR message: error"
 
 
 #++++++++++++++++++++++++++++++下面主要是减少重复告警的频率+++++++++++++++++++++++++++++
@@ -43,9 +44,8 @@ exponential_realert:
 #++++++++++++++++++++++++++++++后面主要是定义我们的报警模板具体还是参考官方文档++++++++++
 # 调用的报警提供
 alert:
-- "email"
-email:
-- "zhangweish@cangoonline.com"
+- "elastalert_modules.wechat_qiye_alert.WeChatAlerter"
+
 alert_subject: "Error shotting the {} @{}"
 alert_subject_args:
   - name
@@ -66,11 +66,10 @@ alert_text_args:
  - num_hits
  - log.file.path
 
-# SMTP configration
-smtp_host: smtp.cangoonline.com
-smtp_port: 25
-
-# SMTP auth
-smtp_auth_file: /opt/elastalert/smtpAuth/smtp_auth_file.yaml
-email_reply_to: dcadmin@cangoonline.com
-from_addr: dcadmin@cangoonline.com
+# wechat work config
+corp_id: "ww99192c1e2a31dbeb"
+secret: "iUzhvURNCUqlVVdEwo2EnmfCz98EYSFsUkxlk_GaOVI"
+agent_id: 1000042
+#party_id: ""
+user_id: "E007797"
+#tag_id: ""
