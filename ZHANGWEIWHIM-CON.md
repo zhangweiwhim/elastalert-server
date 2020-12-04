@@ -44,5 +44,9 @@ docker run -d -p 3030:3030 -p 3333:3333 \
 ## step5. Op on kibana Web 
 
 ![image](http://github.com/zhangweiwhim/readme_add_pic/raw/master/images/elastalert2-1.png)
+
+the new rules was created that input format like the files under the elastalert-server/ruels 
+
+
 ![image](http://github.com/zhangweiwhim/readme_add_pic/raw/master/images/elastalert2-2.png)
 
