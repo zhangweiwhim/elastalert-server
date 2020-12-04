@@ -1,5 +1,8 @@
 I was use elastalert:v.0.2.4 and elastalert-kibana-plugin:7.5.0
 
+Then the elastalert-kibana-plugin the lastest version was just 7.5.0  
+
+
 Has areadly support the Wechat Work 
 
 ## step1.Clone the repository
