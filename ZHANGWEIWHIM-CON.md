@@ -8,7 +8,11 @@ git clone https://github.com/zhangweiwhim/elastalert-server.git && cd elastalert
 
 ```
 
-## step2.Build the image
+## step2.Modify the config for u es server
+modify all config files that files under config dir  
+
+
+## step3.Build the image
 ```bash
 make install
 ```
@@ -17,7 +21,7 @@ make install
 ![image](http://github.com/zhangweiwhim/readme_add_pic/raw/master/images/elasalert1.png)
 
 
-## step3.Run the Docker container
+## step4.Run the Docker container
 
 ```bash
 docker run -d -p 3030:3030 -p 3333:3333 \
@@ -34,7 +38,7 @@ docker run -d -p 3030:3030 -p 3333:3333 \
 
 ### after the contaniner was started
 
-## step4. Op on kibana Web 
+## step5. Op on kibana Web 
 
 ![image](http://github.com/zhangweiwhim/readme_add_pic/raw/master/images/elastalert2-1.png)
 ![image](http://github.com/zhangweiwhim/readme_add_pic/raw/master/images/elastalert2-2.png)
