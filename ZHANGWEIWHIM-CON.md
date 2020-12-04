@@ -19,7 +19,7 @@ modify all config files that files under config dir
 ```bash
 make install
 ```
-### hold on few times . u will find belw pic
+### hold on few times . u will find below pic
 
 ![image](http://github.com/zhangweiwhim/readme_add_pic/raw/master/images/elasalert1.png)
 
